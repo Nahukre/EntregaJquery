@@ -279,7 +279,7 @@ function definirInversor(f) {
     let SumaQuizz = porcentajeDeAhorro + reduccionDeActivo + gananciaEsperada + nuevoActivo;
     console.log(SumaQuizz);
 
-    const ordenarActivos = () => {
+    const ordenarNivelRiesgo = () => {
         nacional.activo.sort((a, b) => {
             if (a.nivelRiesgo < b.nivelRiesgo) {
                 return -1;
@@ -291,7 +291,7 @@ function definirInversor(f) {
         });
         console.log(nacional.activo);
     }
-    ordenarActivos();
+    ordenarNivelRiesgo();
 
     let tipoInversor = document.getElementById("tipoInversor");
 
