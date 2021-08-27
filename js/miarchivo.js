@@ -287,8 +287,9 @@ function definirInversor(f) {
             contenedorTipoInversorConservador.innerHTML =
                 `<h5 class="operacionOpcion">\nUsted es un inversor conservador.</h>`;
             tipoInversor.appendChild(contenedorTipoInversorConservador);
-            for (const inversiones of nacional.activo.nivelRiesgo = 1) {
-                $("#card").append(`<div class= "activo__dolarBlue">
+            let activosConservadores = nacional.activo = nacional.activo.nivelRiesgo = 1;
+            for (const inversiones of activosConservadores) {               
+                $("#cardTipoInversor").append(`<div class= "activo__dolarBlue">
                 <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
                 <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}"
                 width= "100px" height= "100px">
