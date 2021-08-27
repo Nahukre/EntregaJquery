@@ -314,7 +314,7 @@ function definirInversor(f) {
                     Ocultarcards.getElementsByClass("nivelRiesgo1").style.display = "none";
                     Ocultarcards.getElementsByClass("nivelRiesgo3").style.display = "none";
                   }
-                OcultarCard23
+                OcultarCard23();
             break;
         case (SumaQuizz <= 7 || SumaQuizz <= 9):
             let contenedorTipoInversorModerado = document.createElement("div");
