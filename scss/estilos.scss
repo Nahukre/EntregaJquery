@@ -166,6 +166,10 @@ $color-celeste: #548aff;
     margin-left: 10px;
     margin-right: 10px;
   }
+  #cardRiesgo {
+    display: flex;
+    justify-content: center;
+  }
   .operacionOpciones {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 5px;
@@ -256,7 +260,7 @@ $color-celeste: #548aff;
       background-color: $color-celeste;
     }
   }
-  .nivelRiesgo1{
+  .nivelRiesgo1 {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 5px;
     margin-top: 20px;
@@ -265,13 +269,14 @@ $color-celeste: #548aff;
     border: solid;
     border-width: 3px;
     border-color: black;
+    width: 400px;
     &:hover {
       transform: scale(1.05);
       transition-duration: 0.6s;
       background-color: greenyellow;
     }
   }
-  .nivelRiesgo2{
+  .nivelRiesgo2 {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 5px;
     margin-top: 20px;
@@ -280,13 +285,14 @@ $color-celeste: #548aff;
     border: solid;
     border-width: 3px;
     border-color: black;
+    width: 400px;
     &:hover {
       transform: scale(1.05);
       transition-duration: 0.6s;
       background-color: greenyellow;
     }
   }
-  .nivelRiesgo3{
+  .nivelRiesgo3 {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 5px;
     margin-top: 20px;
@@ -295,6 +301,7 @@ $color-celeste: #548aff;
     border: solid;
     border-width: 3px;
     border-color: black;
+    width: 400px;
     &:hover {
       transform: scale(1.05);
       transition-duration: 0.6s;
@@ -593,7 +600,7 @@ $color-celeste: #548aff;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.8);
   }
-  #pagina1{
+  #pagina1 {
     display: grid;
   }
 }

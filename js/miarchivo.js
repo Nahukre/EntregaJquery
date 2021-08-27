@@ -294,16 +294,16 @@ function definirInversor(f) {
     ordenarNivelRiesgo();
 
     let tipoInversor = document.getElementById("tipoInversor");
-    let Ocultarcards = document.getElementById("card");
+    
 
     switch (true) {
         case (SumaQuizz <= 4 || SumaQuizz <= 6):
             let contenedorTipoInversorConservador = document.createElement("div");
             contenedorTipoInversorConservador.innerHTML =
-                `<h5 class="operacionOpcion">\nUsted es un inversor conservador.</h>`;
+                `<h5 class="operacionOpcion">Usted es un inversor conservador</h>`;
                 tipoInversor.appendChild(contenedorTipoInversorConservador);
                 for (const inversiones of nacional.activo) {
-                    $("#card").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+                    $("#cardRiesgo").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
                     <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
                     <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
                     <p class="activo__info">${inversiones.descripcion}</p>
@@ -311,17 +311,17 @@ function definirInversor(f) {
                     </div>`);
                 }
                 
-                    Ocultarcards.getElementsByClass("nivelRiesgo1").style.display = "none";
-                    Ocultarcards.getElementsByClass("nivelRiesgo3").style.display = "none";
-                  
+                $(".nivelRiesgo2").css("display", "none");
+                $(".nivelRiesgo3").css("display", "none");      
             break;
+            
         case (SumaQuizz <= 7 || SumaQuizz <= 9):
             let contenedorTipoInversorModerado = document.createElement("div");
             contenedorTipoInversorModerado.innerHTML =
-                `<h5 class="operacionOpcion">\nUsted es un inversor Moderado.</h>`;
+                `<h5 class="operacionOpcion">Usted es un inversor Moderado</h>`;
             tipoInversor.appendChild(contenedorTipoInversorModerado);
             for (const inversiones of nacional.activo) {
-                $("#card").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+                $("#cardRiesgo").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
                 <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
                 <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
                 <p class="activo__info">${inversiones.descripcion}</p>
@@ -329,27 +329,26 @@ function definirInversor(f) {
                 </div>`);
             }
             
-                Ocultarcards.getElementsByClass("nivelRiesgo1").style.display = "none";
-                Ocultarcards.getElementsByClass("nivelRiesgo3").style.display = "none";
-            
+            $(".nivelRiesgo1").css("display", "none");
+            $(".nivelRiesgo3").css("display", "none");
             break;
+
         case (SumaQuizz >= 10 || SumaQuizz <= 12):
             let contenedorTipoInversorAgresivo = document.createElement("div");
             contenedorTipoInversorAgresivo.innerHTML =
-                `<h5 class="operacionOpcion">\nUsted es un inversor agresivo.</h>`;
+                `<h5 class="operacionOpcion">Usted es un inversor agresivo</h>`;
             tipoInversor.appendChild(contenedorTipoInversorAgresivo);
             for (const inversiones of nacional.activo) {
-                $("#card").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+                $("#cardRiesgo").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
                 <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
                 <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
                 <p class="activo__info">${inversiones.descripcion}</p>
                 <p class="activo__valor">Valor: $${inversiones.valor}</p>
                 </div>`);
             }
-            
-                Ocultarcards.getElementsByClass("nivelRiesgo1").style.display = "none";
-                Ocultarcards.getElementsByClass("nivelRiesgo2").style.display = "none";
-              
+           
+            $(".nivelRiesgo1").css("display", "none");
+            $(".nivelRiesgo2").css("display", "none");
             break;
     }
     document.getElementById("formId").style.display = "none";

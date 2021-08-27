@@ -179,6 +179,11 @@
     margin-right: 10px;
   }
 
+  #cardRiesgo {
+    display: flex;
+    justify-content: center;
+  }
+
   .operacionOpciones {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 5px;
@@ -286,6 +291,7 @@
     border: solid;
     border-width: 3px;
     border-color: black;
+    width: 400px;
   }
   .nivelRiesgo1:hover {
     transform: scale(1.05);
@@ -302,6 +308,7 @@
     border: solid;
     border-width: 3px;
     border-color: black;
+    width: 400px;
   }
   .nivelRiesgo2:hover {
     transform: scale(1.05);
@@ -318,6 +325,7 @@
     border: solid;
     border-width: 3px;
     border-color: black;
+    width: 400px;
   }
   .nivelRiesgo3:hover {
     transform: scale(1.05);
