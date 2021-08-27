@@ -310,9 +310,10 @@ function definirInversor(f) {
                     </div>`);
                 }
                 function OcultarCard(){
-                    $('#nivelRiesgo2').css('display', 'none');
-                    $('#nivelRiesgo3').css('display', 'none');
+                    $document.getElementsByClass("nivelRiesgo2").style.display = "none";
+                    $document.getElementsByClass("nivelRiesgo3").style.display = "none";
                 }
+            
             break;
         case (SumaQuizz <= 7 || SumaQuizz <= 9):
             let contenedorTipoInversorModerado = document.createElement("div");
