@@ -287,15 +287,13 @@ function definirInversor(f) {
             contenedorTipoInversorConservador.innerHTML =
                 `<h5 class="operacionOpcion">\nUsted es un inversor conservador.</h>`;
             tipoInversor.appendChild(contenedorTipoInversorConservador);
-            for (const inversiones of nacional.activo) {
-                if(inversiones.nivelRiesgo = 1) {
+            for (const inversiones of nacional.activo.nivelRiesgo = 1) {
                 $("#card").append(`<div class= "activo__dolarBlue">
                 <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
                 <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}"
                 width= "100px" height= "100px">
                 <p class="activo__info">${inversiones.descripcion}</p>
                 <p class="activo__valor">Valor: $${inversiones.valor}</p></div>`);
-                }
             }
             break;
         case (SumaQuizz <= 7 || SumaQuizz <= 9):
