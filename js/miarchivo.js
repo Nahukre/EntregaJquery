@@ -291,10 +291,10 @@ function definirInversor(f) {
                 if(inversiones.nivelRiesgo = 1) {
                 $("#card").append(`<div class= "activo__dolarBlue">
                 <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
-               <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
+                <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}"
+                width= "100px" height= "100px">
                 <p class="activo__info">${inversiones.descripcion}</p>
-                <p class="activo__valor">Valor: $${inversiones.valor}</p>
-               <h5 class="opciones">\nUsted podría comprar con su ahorro mensual ${division(ahorroIngresado, inversiones.valor).toFixed(2)} ${inversiones.denominacion}.</h5></div>`);
+                <p class="activo__valor">Valor: $${inversiones.valor}</p></div>`);
                 }
             }
             break;
