@@ -277,6 +277,54 @@
     background-color: #548aff;
   }
 
+  .nivelRiesgo1 {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: solid;
+    border-width: 3px;
+    border-color: black;
+  }
+  .nivelRiesgo1:hover {
+    transform: scale(1.05);
+    transition-duration: 0.6s;
+    background-color: greenyellow;
+  }
+
+  .nivelRiesgo2 {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: solid;
+    border-width: 3px;
+    border-color: black;
+  }
+  .nivelRiesgo2:hover {
+    transform: scale(1.05);
+    transition-duration: 0.6s;
+    background-color: greenyellow;
+  }
+
+  .nivelRiesgo3 {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: solid;
+    border-width: 3px;
+    border-color: black;
+  }
+  .nivelRiesgo3:hover {
+    transform: scale(1.05);
+    transition-duration: 0.6s;
+    background-color: greenyellow;
+  }
+
   #activo__dolarBlue {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 5px;
@@ -609,5 +657,9 @@
     font-size: 20px;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  #pagina1 {
+    display: grid;
   }
 }/*# sourceMappingURL=estilos.css.map */

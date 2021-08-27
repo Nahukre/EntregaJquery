@@ -279,6 +279,20 @@ function definirInversor(f) {
     let SumaQuizz = porcentajeDeAhorro + reduccionDeActivo + gananciaEsperada + nuevoActivo;
     console.log(SumaQuizz);
 
+    const ordenarActivos = () => {
+        nacional.activo.sort((a, b) => {
+            if (a.nivelRiesgo < b.nivelRiesgo) {
+                return -1;
+            }
+            if (a.nivelRiesgo > b.nivelRiesgo) {
+                return 1;
+            }
+            return 0;
+        });
+        console.log(nacional.activo);
+    }
+    ordenarActivos();
+
     let tipoInversor = document.getElementById("tipoInversor");
 
     switch (true) {
@@ -286,16 +300,17 @@ function definirInversor(f) {
             let contenedorTipoInversorConservador = document.createElement("div");
             contenedorTipoInversorConservador.innerHTML =
                 `<h5 class="operacionOpcion">\nUsted es un inversor conservador.</h>`;
+                for (const inversiones of nacional.activo) {
+                    $("#card").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+                    <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
+                    <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
+                    <p class="activo__info">${inversiones.descripcion}</p>
+                    <p class="activo__valor">Valor: $${inversiones.valor}</p>
+                    </div>`);
+                }
+                $(".nivelRiesgo2").style.display = "block";
+                $(".nivelRiesgo3").style.display = "block";
             tipoInversor.appendChild(contenedorTipoInversorConservador);
-            let activosConservadores = nacional.activo = nacional.activo.nivelRiesgo = 1;
-            for (const inversiones of activosConservadores) {               
-                $("#cardTipoInversor").append(`<div class= "activo__dolarBlue">
-                <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
-                <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}"
-                width= "100px" height= "100px">
-                <p class="activo__info">${inversiones.descripcion}</p>
-                <p class="activo__valor">Valor: $${inversiones.valor}</p></div>`);
-            }
             break;
         case (SumaQuizz <= 7 || SumaQuizz <= 9):
             let contenedorTipoInversorModerado = document.createElement("div");
@@ -330,4 +345,31 @@ function cerrarFormulario() {
     document.getElementById("formIdBis").style.display = "none";
 }
 
- 
+/// Scroll up ///
+
+document.getElementById("button-up").addEventListener("click", scrollUp);
+
+function scrollUp() {
+
+    var currentScroll = document.documentElement.scrollTop;
+
+    if (currentScroll > 0) {
+        window.requestAnimationFrame(scrollUp);
+        window.scrollTo(0, currentScroll - (currentScroll / 10));
+        buttonUp.style.transform = "scale(0)";
+    }
+}
+
+buttonUp = document.getElementById("button-up");
+
+window.onscroll = function() {
+
+    var scroll = document.documentElement.scrollTop;
+
+    if (scroll > 500) {
+        buttonUp.style.transform = "scale(1)";
+    } else if (scroll < 500) {
+        buttonUp.style.transform = "scale(0)";
+    }
+
+}
