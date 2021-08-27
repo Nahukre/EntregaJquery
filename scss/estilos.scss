@@ -1,0 +1,551 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$color-verde: #03a00b;
+$color-celeste: #548aff;
+@media only screen and (min-width: 1024px) {
+  .encabezado__index {
+    /* esta clase corresponde al encabezado*/
+    background-color: $color-verde;
+    margin-top: -40px;
+    font-weight: bold;
+    font-family: sans-serif;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    display: flex;
+    width: 100%;
+    // position: absolute;
+    z-index: 100;
+    text-align: center;
+  }
+  .encabezado {
+    /* esta clase corresponde al encabezado*/
+    background-color: $color-verde;
+    font-weight: bold;
+    font-family: sans-serif;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    display: flex;
+    width: 100%;
+    // position: absolute;
+    z-index: 100;
+    text-align: center;
+  }
+  .encabezado__logo {
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+    margin-left: 25%;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    transform: rotate(-15deg);
+  }
+  .encabezado__nombre {
+    color: $color-celeste;
+    font-size: 48px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Dela Gothic One", cursive;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000,
+      1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    margin-left: 40px;
+    margin-top: 7px;
+    margin-bottom: 3px;
+    letter-spacing: 0.1em;
+    word-spacing: 0.3em;
+  }
+  .encabezado__subnombre {
+    color: $color-celeste;
+    font-size: 27px;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-left: 43px;
+    font-family: "Dela Gothic One", cursive;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000,
+      1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    word-spacing: 10px;
+    letter-spacing: 0.2em;
+    word-spacing: 0.25em;
+  }
+  .menu__items--font {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: $color-celeste;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-right: 15px;
+    width: 100%;
+    text-align: right;
+    border-width: 2px;
+    border-bottom: solid;
+    border-top: solid;
+    border-color: black;
+    position: sticky;
+    margin-bottom: 0px;
+  }
+  ul.menu__items--font li {
+    color: black;
+    position: relative;
+    margin-left: 5px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    border: solid;
+    border-color: black;
+    padding: 2px;
+    border-radius: 5px;
+    background-color: $color-verde;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  li {
+    position: relative;
+    display: inline-block;
+    li.item {
+      margin-bottom: 10px;
+    }
+  }
+  a {
+    /* esta etiqueta corresponde a los link dentro del menu*/
+    text-decoration: none;
+    color: black;
+  }
+  .pagina {
+    /* esta clase corresponde al index */
+    background-image: url(../img/inversion.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 700px;
+    font-family: sans-serif;
+    padding-top: 40px;
+    text-align: center;
+  }
+  table {
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+  .carousel-inner {
+    display: block;
+    margin: auto;
+    width: 60%;
+    border-radius: 5px;
+    border-width: 3px;
+    border: solid;
+    border-color: $color-celeste;
+  }
+  .carousel-indicators {
+    margin: auto;
+  }
+  .carousel-control-prev {
+    width: 50%;
+    color: $color-celeste;
+  }
+  .carousel-control-next {
+    width: 50%;
+    color: $color-celeste;
+  }
+  #myForm {
+    text-align: left;
+  }
+  #formIdBis {
+    margin-left: 30%;
+    top: 40%;
+  }
+  #formId {
+    top: 30%;
+  }
+  .card {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .operacionOpciones {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
+    border: solid;
+    border-color: black;
+    border-radius: 5px;
+  }
+  // #resueltadoFinanciero {
+  // }
+  .operacionOpcion {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    border: solid;
+    border-color: black;
+    display: inline-block;
+    padding: 10px;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .activo {
+    display: grid;
+    width: 95%;
+    grid-template-columns: 33% 33% 33%;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    margin-left: 3.5%;
+  }
+  #activo {
+    display: grid;
+    width: 95%;
+    grid-template-columns: 33% 33% 33%;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    margin-left: 3.5%;
+  }
+  .activos__tarjetas {
+    margin-top: 10px;
+    padding-bottom: 30px;
+  }
+  .activo__tarjeta {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: solid;
+    display: inline-block;
+    border-width: 3px;
+    border-color: black;
+    &:hover {
+      transform: scale(1.05);
+      transition-duration: 0.6s;
+      background-color: $color-celeste;
+    }
+  }
+  .tarjeta__nombre {
+    text-align: center;
+    padding-top: 10px;
+  }
+  img .tarjeta__foto {
+    width: 100px;
+    height: 100px;
+  }
+  .tarjeta__info {
+    text-align: center;
+    font-size: 20px;
+    padding: 15px;
+  }
+  .activo__dolarBlue {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: solid;
+    border-width: 3px;
+    border-color: black;
+    &:hover {
+      transform: scale(1.05);
+      transition-duration: 0.6s;
+      background-color: $color-celeste;
+    }
+  }
+  #activo__dolarBlue {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: solid;
+    border-width: 3px;
+    border-color: black;
+    &:hover {
+      transform: scale(1.05);
+      transition-duration: 0.6s;
+      background-color: $color-celeste;
+    }
+  }
+  .dolarBlue__nombre {
+    text-align: center;
+    padding-top: 10px;
+  }
+  img.card-img-top {
+    width: 100%;
+    height: 400px;
+  }
+  #activo__cedears {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    border: solid;
+    border-width: 3px;
+    border-color: black;
+    &:hover {
+      transform: scale(1.05);
+      transition-duration: 0.6s;
+      background-color: $color-celeste;
+    }
+  }
+  .cedears__nombre {
+    text-align: center;
+    padding-top: 10px;
+  }
+  .activo__foto {
+    width: 100%;
+    height: 270px;
+  }
+  #activo__bitcoin {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    border: solid;
+    border-width: 3px;
+    border-color: black;
+    &:hover {
+      transform: scale(1.05);
+      transition-duration: 0.6s;
+      background-color: $color-celeste;
+    }
+  }
+  .bitcoin__nombre {
+    text-align: center;
+    padding-top: 10px;
+  }
+  .bitcoin__foto {
+    width: 100%;
+  }
+  .activo__info {
+    text-align: center;
+    font-size: 20px;
+    padding: 15px;
+  }
+  .activo__valor {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: -10px;
+  }
+  .card-group {
+    margin-top: 10px;
+  }
+  img.pie__redes {
+    width: 30px;
+    height: 30px;
+  }
+  .pie {
+    /* esta clase corresponde a los pie de pagina*/
+    background-color: $color-verde;
+    font-family: sans-serif;
+    border-top: solid;
+    border-color: black;
+    border-width: 10px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    order: 1000;
+  }
+  h2 {
+    margin-left: 20px;
+  }
+  #submitButton {
+    margin-left: 40%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+  }
+  #submitButtonQuizz {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+  }
+  .opciones {
+    font-weight: bold;
+  }
+  #titulo1 {
+    justify-content: center;
+    display: inline-block;
+    font-size: 50px;
+    background-color: $color-celeste;
+    border-radius: 5px;
+    padding: 5px;
+    border: solid;
+    border-color: black;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  .subtitulo {
+    font-size: 30px;
+    padding: 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  #contenedor {
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: $color-verde;
+    display: inline-block;
+    margin-top: 30px;
+    border: solid;
+    border-color: black;
+    padding: 5px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 30px;
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+  .formClass {
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 10px;
+    position: absolute;
+    display: none;
+    top: 20%;
+    z-index: 10;
+  }
+  #cerrar {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+  #cerrarFormulario {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+  #foto__cerrar {
+    width: 30px;
+    height: 30px;
+  }
+  label {
+    font-size: 20px;
+    padding: 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+  }
+  input {
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+  }
+  .liQuizz {
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+    padding: 2px;
+    border-radius: 5px;
+    &:focus {
+      transform: scale(none);
+    }
+  }
+  fieldset {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    padding-bottom: 0px;
+    padding-top: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  .motivo {
+    padding-top: 20px;
+  }
+  select {
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  textarea {
+    border-radius: 5px;
+    &:focus {
+      font-size: 16px;
+      border-radius: 5px;
+      transform: translate(20px, 0px);
+      min-width: 510px;
+      min-height: 200px;
+    }
+  }
+  .consulta {
+    vertical-align: super;
+  }
+  .consulta2 {
+    margin-top: 20px;
+  }
+  .botones {
+    font-family: sans-serif;
+    color: black;
+    border: solid;
+    border-color: black;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 2px;
+    &:hover {
+      background-color: $color-celeste;
+      color: black;
+    }
+  }
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    line-height: 10px;
+    text-align: left;
+  }
+  .formularioNovedades {
+    margin: 10px;
+    font-size: 20px;
+    padding: 10px;
+  }
+  div.checkbox {
+    margin-left: 0px;
+    font-size: 20px;
+  }
+  .checkbox {
+    display: inline;
+    font-size: 15px;
+    margin-left: -17px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-left: -20px;
+    padding: 2px;
+  }
+  .input-group {
+    display: block;
+  }
+  select {
+    font-size: 20px;
+  }
+  .carousel__titulo {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
