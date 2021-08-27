@@ -308,8 +308,10 @@ function definirInversor(f) {
                     <p class="activo__valor">Valor: $${inversiones.valor}</p>
                     </div>`);
                 }
-                $(".nivelRiesgo2").style.display = "none";
-                $(".nivelRiesgo3").style.display = "none";
+                function OcultarCard(){
+                    $('#nivelRiesgo2').css('display', 'none');
+                    $('#nivelRiesgo3').css('display', 'none');
+                }
             tipoInversor.appendChild(contenedorTipoInversorConservador);
             break;
         case (SumaQuizz <= 7 || SumaQuizz <= 9):
