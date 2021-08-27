@@ -310,11 +310,10 @@ function definirInversor(f) {
                     <p class="activo__valor">Valor: $${inversiones.valor}</p>
                     </div>`);
                 }
-                function OcultarCard23(){
+                
                     Ocultarcards.getElementsByClass("nivelRiesgo1").style.display = "none";
                     Ocultarcards.getElementsByClass("nivelRiesgo3").style.display = "none";
-                  }
-                OcultarCard23();
+                  
             break;
         case (SumaQuizz <= 7 || SumaQuizz <= 9):
             let contenedorTipoInversorModerado = document.createElement("div");
@@ -329,11 +328,10 @@ function definirInversor(f) {
                 <p class="activo__valor">Valor: $${inversiones.valor}</p>
                 </div>`);
             }
-            function OcultarCard13(){
+            
                 Ocultarcards.getElementsByClass("nivelRiesgo1").style.display = "none";
                 Ocultarcards.getElementsByClass("nivelRiesgo3").style.display = "none";
-            }
-        OcultarCard13();
+            
             break;
         case (SumaQuizz >= 10 || SumaQuizz <= 12):
             let contenedorTipoInversorAgresivo = document.createElement("div");
@@ -348,11 +346,10 @@ function definirInversor(f) {
                 <p class="activo__valor">Valor: $${inversiones.valor}</p>
                 </div>`);
             }
-            function OcultarCard12(){
+            
                 Ocultarcards.getElementsByClass("nivelRiesgo1").style.display = "none";
                 Ocultarcards.getElementsByClass("nivelRiesgo2").style.display = "none";
-              }
-            OcultarCard12();
+              
             break;
     }
     document.getElementById("formId").style.display = "none";
