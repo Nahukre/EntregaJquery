@@ -313,19 +313,45 @@ function definirInversor(f) {
                     $document.getElementsByClass("nivelRiesgo2").style.display = "none";
                     $document.getElementsByClass("nivelRiesgo3").style.display = "none";
                 }
-            
+            OcultarCard();
             break;
         case (SumaQuizz <= 7 || SumaQuizz <= 9):
             let contenedorTipoInversorModerado = document.createElement("div");
             contenedorTipoInversorModerado.innerHTML =
                 `<h5 class="operacionOpcion">\nUsted es un inversor Moderado.</h>`;
             tipoInversor.appendChild(contenedorTipoInversorModerado);
+             for (const inversiones of nacional.activo) {
+                    $("#card").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+                    <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
+                    <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
+                    <p class="activo__info">${inversiones.descripcion}</p>
+                    <p class="activo__valor">Valor: $${inversiones.valor}</p>
+                    </div>`);
+                }
+                function OcultarCard(){
+                    $document.getElementsByClass("nivelRiesgo1").style.display = "none";
+                    $document.getElementsByClass("nivelRiesgo3").style.display = "none";
+                }
+            OcultarCard();
             break;
         case (SumaQuizz >= 10 || SumaQuizz <= 12):
             let contenedorTipoInversorAgresivo = document.createElement("div");
             contenedorTipoInversorAgresivo.innerHTML =
                 `<h5 class="operacionOpcion">\nUsted es un inversor agresivo.</h>`;
             tipoInversor.appendChild(contenedorTipoInversorAgresivo);
+             for (const inversiones of nacional.activo) {
+                    $("#card").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+                    <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
+                    <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
+                    <p class="activo__info">${inversiones.descripcion}</p>
+                    <p class="activo__valor">Valor: $${inversiones.valor}</p>
+                    </div>`);
+                }
+                function OcultarCard(){
+                    $document.getElementsByClass("nivelRiesgo1").style.display = "none";
+                    $document.getElementsByClass("nivelRiesgo2").style.display = "none";
+                }
+            OcultarCard();
             break;
     }
     document.getElementById("formId").style.display = "none";
