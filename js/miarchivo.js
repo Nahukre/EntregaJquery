@@ -178,7 +178,7 @@ function crearUsuario(e) {
     //     </div>`;
     //     document.body.appendChild(tarjetaActivos);
     // }
-
+    $("#mostrarTipoInversor").prepend(`<h6 class="operacionOpcion2">Listado de posibles inversiones</h6>`);
     for (const inversiones of nacional.activo) {
         $("#card").append(`<div class= "activo__dolarBlue">
         <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
@@ -189,7 +189,7 @@ function crearUsuario(e) {
     }
 
 
-
+    $(".operacionOpcion2").css("display", "block");
     document.getElementById("formIdBis").style.display = "none";
 };
 
@@ -217,9 +217,9 @@ class activoDeInversion {
 }
 
 let nacional = new activoDeInversion("Activos dentro del mercado local con los cuales poder ahorrar");
-let dolarBlue = new Inversion("Dolar blue", 1, 170, "El Dólar Blue es el dólar que se consigue en el mercado negro o mercado paralelo. La cotización o valor del Dólar Blue hoy generalmente es superior a la cotización del dólar oficial y suele aumentar a medida que aumenta el control de cambios o se incrementan las restricciones para la compra de dólares al precio oficial.", "../img/dolar.jpg");
-let bitcoin = new Inversion("Bitcoin", 3, 8300000, "Bitcoin es una moneda virtual o criptomoneda que se utiliza como medio de intercambio electrónico que sirve para adquirir productos y servicios como cualquier otra moneda. Pero esta moneda es descentralizada, es decir que no existe una autoridad o ente de control que sea responsable de su emisión y registro de sus movimientos.", "../img/bitcoin.jpg");
-let cedearTesla = new Inversion("Tesla cedear", 3, 7500, "Cedears  (Certificados de Depósito Argentinos) de la compañia Tesla. Activo financiero atado al dolar y a la valuación de la empresa en el mercado.", "../img/tesla.png");
+let dolarBlue = new Inversion("Dolar blue", 1, 170, "El Dólar Blue es el dólar que se consigue en el mercado negro o paralelo. Su cotización o valor generalmente es superior a la cotización del oficial y suele aumentar a medida que aumenta el control de cambios o se incrementan las restricciones para la compra de dólares al precio oficial.", "../img/dolar.jpg");
+let bitcoin = new Inversion("Bitcoin", 3, 8300000, "Bitcoin es una criptomoneda descentralizada, es decir que no existe una autoridad de control que sea responsable de su emisión y registro de sus movimientos.", "../img/bitcoin.jpg");
+let cedearTesla = new Inversion("Tesla cedear", 3, 7500, "Cedears  (Certificados de Depósito Argentinos) de la compañia Tesla. Activo financiero atado al dolar y a la valuación de la empresa en el mercado. Este activo es considerado de riesgo.", "../img/tesla.png");
 let cedearApple = new Inversion("Apple cedear", 2, 3500, "Cedears  (Certificados de Depósito Argentinos) de la compañia Apple. Activo financiero atado al dolar y a la valuación de la empresa en el mercado.", "../img/apple.jpg");
 let cedearAmazon = new Inversion("Amazon cedear", 2, 4500, "Cedears  (Certificados de Depósito Argentinos) de la compañia Amazon. Activo financiero atado al dolar y a la valuación de la empresa en el mercado.", "../img/amazon.jpg");
 let oro = new Inversion("Oro", 1, 5570000, "El oro es un metal precioso utilizado como reserva de valor. Se caracteriza por tener poca variación en su cotización y ser resguardo de valor en epocas de inflación. El interés por las materias primas parece que está en auge y hay buenos catalizadores que pueden mantener esta dinámica creciente.", "../img/oro.jpg");
@@ -294,41 +294,39 @@ function definirInversor(f) {
     ordenarNivelRiesgo();
 
     let tipoInversor = document.getElementById("tipoInversor");
-    
+
 
     switch (true) {
         case (SumaQuizz <= 4 || SumaQuizz <= 6):
             let contenedorTipoInversorConservador = document.createElement("div");
             contenedorTipoInversorConservador.innerHTML =
                 `<h5 class="operacionOpcion">Usted es un inversor conservador</h>`;
-                tipoInversor.appendChild(contenedorTipoInversorConservador);
-                for (const inversiones of nacional.activo) {
-                    $("#cardRiesgo").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+            tipoInversor.appendChild(contenedorTipoInversorConservador);
+            for (const inversiones of nacional.activo) {
+                $(".resultadoTipoInversor").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
                     <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
-                    <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
-                    <p class="activo__info">${inversiones.descripcion}</p>
-                    <p class="activo__valor">Valor: $${inversiones.valor}</p>
+                    <img class="activo__foto2" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
+                    <p class="activo__valor2">Valor: $${inversiones.valor}</p>
                     </div>`);
-                }
-                
-                $(".nivelRiesgo2").css("display", "none");
-                $(".nivelRiesgo3").css("display", "none");      
+            }
+
+            $(".nivelRiesgo2").css("display", "none");
+            $(".nivelRiesgo3").css("display", "none");
             break;
-            
+
         case (SumaQuizz <= 7 || SumaQuizz <= 9):
             let contenedorTipoInversorModerado = document.createElement("div");
             contenedorTipoInversorModerado.innerHTML =
                 `<h5 class="operacionOpcion">Usted es un inversor Moderado</h>`;
             tipoInversor.appendChild(contenedorTipoInversorModerado);
             for (const inversiones of nacional.activo) {
-                $("#cardRiesgo").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+                $(".resultadoTipoInversor").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
                 <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
                 <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
-                <p class="activo__info">${inversiones.descripcion}</p>
-                <p class="activo__valor">Valor: $${inversiones.valor}</p>
+                <p class="activo__valor2">Valor: $${inversiones.valor}</p>
                 </div>`);
             }
-            
+
             $(".nivelRiesgo1").css("display", "none");
             $(".nivelRiesgo3").css("display", "none");
             break;
@@ -339,19 +337,20 @@ function definirInversor(f) {
                 `<h5 class="operacionOpcion">Usted es un inversor agresivo</h>`;
             tipoInversor.appendChild(contenedorTipoInversorAgresivo);
             for (const inversiones of nacional.activo) {
-                $("#cardRiesgo").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+                $(".resultadoTipoInversor").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
                 <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
-                <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
-                <p class="activo__info">${inversiones.descripcion}</p>
-                <p class="activo__valor">Valor: $${inversiones.valor}</p>
+                <img class="activo__foto2" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
+                <p class="activo__valor2">Valor: $${inversiones.valor}</p>
                 </div>`);
             }
-           
+
             $(".nivelRiesgo1").css("display", "none");
             $(".nivelRiesgo2").css("display", "none");
             break;
     }
     document.getElementById("formId").style.display = "none";
+    $(".resultadoTipoInversor").css("display", "block");
+    $(".operacionOpcion3").css("display", "block");
 }
 definirInversor();
 
@@ -370,6 +369,11 @@ function cerrar() {
 function cerrarFormulario() {
     document.getElementById("formIdBis").style.display = "none";
 }
+
+function recargarFormulario() {
+    location.reload();
+}
+
 
 /// Scroll up ///
 
@@ -392,10 +396,17 @@ window.onscroll = function() {
 
     var scroll = document.documentElement.scrollTop;
 
-    if (scroll > 500) {
+    if (scroll > 100) {
         buttonUp.style.transform = "scale(1)";
-    } else if (scroll < 500) {
+    } else if (scroll < 100) {
         buttonUp.style.transform = "scale(0)";
     }
 
 }
+
+function mostrarBtnRecargar() {
+    if ($('#cuantoTardoBtn').clicked == true && $('#tipoInversorBtn').clicked == true) {
+        $("#recargarFormulario").css("display", "inline-block");
+    }
+}
+mostrarBtnRecargar();
