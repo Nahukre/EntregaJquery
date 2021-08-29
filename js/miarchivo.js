@@ -61,6 +61,14 @@ function crearUsuario(e) {
     let tiempoTotal = division(valorBienIngresado, (suma(extraIngresado, ahorroAnual)));
     // let tiempoPlus = division(valorBienIngresado, multiplicacion(ahorroAnual, 1.1));
 
+    $(document).ready(function() {
+        $("#submitButton").click(function(event) {
+            $("#cuantoTardo").empty();
+            $("#card").empty();
+        });
+    });
+
+
     let cuantoTardo = document.getElementById("cuantoTardo");
 
     switch (true) {
@@ -68,71 +76,77 @@ function crearUsuario(e) {
             let contenedorPorcentajeAhorro1 = document.createElement("div");
             contenedorPorcentajeAhorro1.classList.add('operacionOpciones');
             contenedorPorcentajeAhorro1.innerHTML = `<h5>\nSu porcentaje de ahorro es bajo.</h><h3>Hola ${usuario.nombre}!</h3>
-            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%.</h5> 
-            <h5>\nSu ahorro anual es de $${ahorroAnual}.</h5> 
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nValor del Bien: $${usuario.valorBien}<h5>`;
+            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5> 
+            <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
+            <h5>\nValor del Bien: $${usuario.valorBien}<h5>
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro1);
             break;
         case ((ahorroPorcentaje > 5) && (ahorroPorcentaje <= 10)):
             let contenedorPorcentajeAhorro2 = document.createElement("div");
             contenedorPorcentajeAhorro2.classList.add('operacionOpciones');
-            contenedorPorcentajeAhorro2.innerHTML = `<h3>Hola ${usuario.nombre}!</h3><h4>\nSu porcentaje de ahorro podría ser más elevado.</h4>
-            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%.</h5><h5>\nSu ahorro anual es de $${ahorroAnual}.</h5> 
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nValor del Bien: $${usuario.valorBien}<h5>`;
+            contenedorPorcentajeAhorro2.innerHTML = `<h3>Hola ${usuario.nombre}!</h3>
+            <h4>\nSu porcentaje de ahorro podría ser más elevado</h4>
+            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5>
+            <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
+            <h5>\nValor del Bien: $${usuario.valorBien}<h5>
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro2);
             break;
         case ((ahorroPorcentaje > 10) && (ahorroPorcentaje <= 20)):
             let contenedorPorcentajeAhorro3 = document.createElement("div");
             contenedorPorcentajeAhorro3.classList.add('operacionOpciones');
-            contenedorPorcentajeAhorro3.innerHTML = `<h3>Hola ${usuario.nombre}!</h3><h4>\nSu porcentaje de ahorro es considerable.</h4>
-            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%.</h5> 
-            <h5>\nSu ahorro anual es de $${ahorroAnual}.</h5> 
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nValor del Bien: $${usuario.valorBien}<h5>`;
+            contenedorPorcentajeAhorro3.innerHTML = `<h3>Hola ${usuario.nombre}!</h3>
+            <h4>\nSu porcentaje de ahorro es considerable</h4>
+            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5> 
+            <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
+            <h5>\nValor del Bien: $${usuario.valorBien}<h5>
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro3);
             break;
         case ((ahorroPorcentaje > 20) && (ahorroPorcentaje <= 50)):
             let contenedorPorcentajeAhorro4 = document.createElement("div");
             contenedorPorcentajeAhorro4.classList.add('operacionOpciones');
-            contenedorPorcentajeAhorro4.innerHTML = `<h3>Hola ${usuario.nombre}!</h3><h4>\nSu porcentaje de ahorro es elevado.</h4>
-            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%.</h5> 
-            <h5>\nSu ahorro anual es de $${ahorroAnual}.</h5> 
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nValor del Bien: $${usuario.valorBien}<h5>`;
+            contenedorPorcentajeAhorro4.innerHTML = `<h3>Hola ${usuario.nombre}!</h3>
+            <h4>\nSu porcentaje de ahorro es elevado</h4>
+            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5> 
+            <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
+            <h5>\nValor del Bien: $${usuario.valorBien}<h5>
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro4);
             break;
         case (ahorroPorcentaje > 50):
             let contenedorPorcentajeAhorro5 = document.createElement("div");
             contenedorPorcentajeAhorro5.classList.add('operacionOpciones');
-            contenedorPorcentajeAhorro5.innerHTML = `<h3>Hola ${usuario.nombre}!</h3><h4>\nUsted tiene una gran capacidad de ahorro.</h4>
-            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%.</h5> 
-            <h5>\nSu ahorro anual es de $${ahorroAnual}.</h5> 
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nValor del Bien: $${usuario.valorBien}<h5>`;
+            contenedorPorcentajeAhorro5.innerHTML = `<h3>Hola ${usuario.nombre}!</h3>
+            <h4>\nUsted tiene una gran capacidad de ahorro</h4>
+            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5> 
+            <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
+            <h5>\nValor del Bien: $${usuario.valorBien}<h5>
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro5);
             break;
         default:
             let contenedorPorcentajeAhorro6 = document.createElement("div");
             contenedorPorcentajeAhorro6.classList.add('operacionOpciones');
-            contenedorPorcentajeAhorro6.innerHTML = `<h3>Hola ${usuario.nombre}!</h3> <h4>\nUsted no ahorra o ingresó un dato incorrecto.</h4>
-            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%.</h5> 
-            <h5>\nSu ahorro anual es de $${ahorroAnual}.</h5> 
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea.</h5> 
-            <h5>\nValor del Bien: $${usuario.valorBien}<h5>`;
+            contenedorPorcentajeAhorro6.innerHTML = `<h3>Hola ${usuario.nombre}!</h3>
+            <h4>\nUsted no ahorra o ingresó un dato incorrecto</h4>
+            <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5> 
+            <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
+            <h5>\nValor del Bien: $${usuario.valorBien}<h5>
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro6);
             break;
     }
@@ -191,6 +205,9 @@ function crearUsuario(e) {
 
     $(".operacionOpcion2").css("display", "block");
     document.getElementById("formIdBis").style.display = "none";
+    $("#mostrarCuantoTardo").css("display", "block");
+    $(".sidebar").css("display", "block");
+    $("#mostarTipoInversor").css("display", "inline-block");
 };
 
 // console.log(localStorage.getItem(1));
@@ -293,6 +310,13 @@ function definirInversor(f) {
     }
     ordenarNivelRiesgo();
 
+    $(document).ready(function() {
+        $("#submitButtonQuizz").click(function(event) {
+            $("#tipoInversor").empty();
+            $(".resultadoTipoInversor2").empty();
+        });
+    });
+
     let tipoInversor = document.getElementById("tipoInversor");
 
 
@@ -303,7 +327,7 @@ function definirInversor(f) {
                 `<h5 class="operacionOpcion">Usted es un inversor conservador</h>`;
             tipoInversor.appendChild(contenedorTipoInversorConservador);
             for (const inversiones of nacional.activo) {
-                $(".resultadoTipoInversor").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+                $(".resultadoTipoInversor2").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
                     <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
                     <img class="activo__foto2" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
                     <p class="activo__valor2">Valor: $${inversiones.valor}</p>
@@ -320,7 +344,7 @@ function definirInversor(f) {
                 `<h5 class="operacionOpcion">Usted es un inversor Moderado</h>`;
             tipoInversor.appendChild(contenedorTipoInversorModerado);
             for (const inversiones of nacional.activo) {
-                $(".resultadoTipoInversor").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+                $(".resultadoTipoInversor2").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
                 <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
                 <img class="activo__foto" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
                 <p class="activo__valor2">Valor: $${inversiones.valor}</p>
@@ -337,7 +361,7 @@ function definirInversor(f) {
                 `<h5 class="operacionOpcion">Usted es un inversor agresivo</h>`;
             tipoInversor.appendChild(contenedorTipoInversorAgresivo);
             for (const inversiones of nacional.activo) {
-                $(".resultadoTipoInversor").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
+                $(".resultadoTipoInversor2").append(`<div class= "nivelRiesgo${inversiones.nivelRiesgo}">
                 <h2 class="dolarBlue__nombre">${inversiones.denominacion}</h2>
                 <img class="activo__foto2" src="${inversiones.foto}" alt="foto de ${inversiones.denominacion}" width= "100px" height= "100px">
                 <p class="activo__valor2">Valor: $${inversiones.valor}</p>
@@ -351,6 +375,9 @@ function definirInversor(f) {
     document.getElementById("formId").style.display = "none";
     $(".resultadoTipoInversor").css("display", "block");
     $(".operacionOpcion3").css("display", "block");
+    $("#mostrarCuantoTardo").css("display", "block");
+    $(".sidebar").css("display", "block");
+    $("#mostarTipoInversor").css("display", "inline-block");
 }
 definirInversor();
 
@@ -369,11 +396,6 @@ function cerrar() {
 function cerrarFormulario() {
     document.getElementById("formIdBis").style.display = "none";
 }
-
-function recargarFormulario() {
-    location.reload();
-}
-
 
 /// Scroll up ///
 
@@ -403,10 +425,3 @@ window.onscroll = function() {
     }
 
 }
-
-function mostrarBtnRecargar() {
-    if ($('#cuantoTardoBtn').clicked == true && $('#tipoInversorBtn').clicked == true) {
-        $("#recargarFormulario").css("display", "inline-block");
-    }
-}
-mostrarBtnRecargar();
