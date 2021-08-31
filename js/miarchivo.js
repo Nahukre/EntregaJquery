@@ -69,16 +69,56 @@ function crearUsuario(e) {
         });
     });
 
-    function tiempo(){
+    function tiempo() {
         let tiempoTotal = division(valorBienIngresado, (suma(extraIngresado, ahorroAnual)))
-        if(tiempoTotal < 1){
-            tiempoTotal = "Menos de un año"
-        }else{
+        if (tiempoTotal < 1) {
+            tiempoTotal = "menos de un año"
+        } else {
             tiempoTotal = `${tiempoTotal.toFixed()} años`
         }
         return tiempoTotal
     }
-    
+
+    function AhorroAños() {
+        let ahorroAños = division(ahorroReal, 12)
+        if (ahorroAños < 1) {
+            ahorroAños = "menos de un año"
+        } else {
+            ahorroAños = `${ahorroAños.toFixed()} años`
+        }
+        return ahorroAños
+    }
+
+    function SueldoAños() {
+        let sueldoAños = division(mesesDeAhorro, 12)
+        if (sueldoAños < 1) {
+            sueldoAños = "menos de un año"
+        } else {
+            sueldoAños = `${sueldoAños.toFixed()} años`
+        }
+        return sueldoAños
+    }
+
+    function AhorroReal() {
+        let ahorroReal = division(valorBienIngresado, ahorroIngresado)
+        if (ahorroReal < 1) {
+            ahorroReal = "menos de un mes"
+        } else {
+            ahorroReal = `${ahorroReal.toFixed()} meses`
+        }
+        return ahorroReal
+    }
+
+    function MesesDeAhorro() {
+        let mesesDeAhorro = division(valorBienIngresado, sueldoIngresado);
+        if (mesesDeAhorro < 1) {
+            mesesDeAhorro = "menos de un mes"
+        } else {
+            mesesDeAhorro = `${mesesDeAhorro.toFixed()} meses`
+        }
+        return mesesDeAhorro
+    }
+
 
     let cuantoTardo = document.getElementById("cuantoTardo");
 
@@ -90,9 +130,9 @@ function crearUsuario(e) {
             <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5> 
             <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
             <h5>\nValor del Bien: $${usuario.valorBien}<h5>
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempo()} años para comprar lo que desea</h5>`;
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${MesesDeAhorro()} o ${SueldoAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${AhorroReal()} o ${AhorroAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempo()} para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro1);
             break;
         case ((ahorroPorcentaje > 5) && (ahorroPorcentaje <= 10)):
@@ -103,9 +143,9 @@ function crearUsuario(e) {
             <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5>
             <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
             <h5>\nValor del Bien: $${usuario.valorBien}<h5>
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${MesesDeAhorro()} o ${SueldoAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${AhorroReal()} o ${AhorroAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempo()} para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro2);
             break;
         case ((ahorroPorcentaje > 10) && (ahorroPorcentaje <= 20)):
@@ -116,9 +156,9 @@ function crearUsuario(e) {
             <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5> 
             <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
             <h5>\nValor del Bien: $${usuario.valorBien}<h5>
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${MesesDeAhorro()} o ${SueldoAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${AhorroReal()} o ${AhorroAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempo()} para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro3);
             break;
         case ((ahorroPorcentaje > 20) && (ahorroPorcentaje <= 50)):
@@ -129,9 +169,9 @@ function crearUsuario(e) {
             <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5> 
             <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
             <h5>\nValor del Bien: $${usuario.valorBien}<h5>
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${MesesDeAhorro()} o ${SueldoAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${AhorroReal()} o ${AhorroAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempo()} para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro4);
             break;
         case (ahorroPorcentaje > 50):
@@ -142,9 +182,9 @@ function crearUsuario(e) {
             <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5> 
             <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
             <h5>\nValor del Bien: $${usuario.valorBien}<h5>
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${MesesDeAhorro()} o ${SueldoAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${AhorroReal()} o ${AhorroAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempo()} para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro5);
             break;
         default:
@@ -155,9 +195,9 @@ function crearUsuario(e) {
             <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5> 
             <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
             <h5>\nValor del Bien: $${usuario.valorBien}<h5>
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${MesesDeAhorro()} o ${SueldoAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${AhorroReal()} o ${AhorroAños()} para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempo()} para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro6);
             break;
     }
@@ -171,38 +211,6 @@ function crearUsuario(e) {
 
     // let mostrarCardActivos = document.getElementById("cardActivos");
 
-    //trabajo eventos complementario crear cards
-    // let cardActivos = document.createElement("section");
-    // cardActivos.classList.add('activo');
-    // cardActivos.innerHTML = `<div class="activo__dolarBlue"><h2 class="dolarBlue__nombre">${dolarBlue.denominacion}</h2>
-    // <img class="activo__foto" src="img/dolar.jpg" alt="foto de dolar">
-    // <p class="activo__info">${dolarBlue.descripcion}</p><p class="activo__valor">Valor: $${dolarBlue.valor}</p><h5 class="opciones">\nUsted podría comprar con su ahorro mensual ${dolarBlueAhorro.toFixed(2)} dólares blue.</h5> 
-    // </div> <div class="activo__dolarBlue"><h2 class="dolarBlue__nombre">${bitcoin.denominacion}</h2>
-    // <img class="activo__foto" src="img/bitcoin.jpg" alt="foto de bitcoin">
-    // <p class="activo__info">${bitcoin.descripcion}</p><p class="activo__valor">Valor: U$S${bitcoin.valor}</p><h5 class="opciones">\nUsted podría comprar con su ahorro mensual ${bitcoinAhorro.toFixed(2)} bitcoins.</h5> 
-    // </div> <div class="activo__dolarBlue"><h2 class="dolarBlue__nombre">${oro.denominacion}</h2>
-    // <img class="activo__foto" src="img/oro.jpg" alt="foto de tesla">
-    // <p class="activo__info">${oro.descripcion}</p><p class="activo__valor">Valor: $${oro.valor}</p><h5 class="opciones">\nUsted podría comprar con su ahorro mensual ${oroAhorro.toFixed(2)} kilos de oro.</h5></div> <div class="activo__dolarBlue"><h2 class="dolarBlue__nombre">${cedearAmazon.denominacion}</h2>
-    // <img class="activo__foto" src="img/amazon.jpg" alt="foto de amazon">
-    // <p class="activo__info">${cedearAmazon.descripcion}</p><p class="activo__valor">Valor: $${cedearAmazon.valor}</p><h5 class="opciones">\nUsted podría comprar con su ahorro mensual ${amazonAhorro.toFixed(2)} cedears de Amazon.</h5>
-    // </div> <div class="activo__dolarBlue"><h2 class="dolarBlue__nombre">${cedearApple.denominacion}</h2>
-    // <img class="activo__foto" src="img/apple.jpg" alt="foto de apple">
-    // <p class="activo__info">${cedearApple.descripcion}</p><p class="activo__valor">Valor: $${cedearApple.valor}</p><h5 class="opciones">\nUsted podría comprar con su ahorro mensual ${appleAhorro.toFixed(2)} cedears de Apple.</h5> 
-    // </div> <div class="activo__dolarBlue"><h2 class="dolarBlue__nombre">${cedearTesla.denominacion}</h2>
-    // <img class="activo__foto" src="img/tesla.png" alt="foto de tesla">
-    // <p class="activo__info">${cedearTesla.descripcion}</p><p class="activo__valor">Valor: $${cedearTesla.valor}</p> <h5 class="opciones">\nUsted podría comprar con su ahorro mensual ${teslaAhorro.toFixed(2)} cedears de Tesla.</h5></div>`;
-    // document.body.appendChild(cardActivos);
-    // mostrarCardActivos.appendChild(cardActivos);
-
-    // for (const inversiones of nacional.activo) {
-    //     let tarjetaActivos = document.createElement("section");
-    //     tarjetaActivos.classList.add('activos__tarjetas');
-    //     tarjetaActivos.innerHTML = `<div id="activo__tarjeta"><h2 class="tarjeta__nombre">${inversiones.denominacion}</h2>
-    //     <img class="tarjeta__foto" src="img/oro.jpg" alt="foto de bitcoin" width= "100px" height= "100px">
-    //     <p class="tarjeta__info">${inversiones.descripcion}</p><p class="activo__valor">Valor: $${cedearTesla.valor}</p> <h5 class="opciones">\nUsted podría comprar con su ahorro mensual ${inversiones.valor.toFixed(2)} cedears de Tesla.</h5>
-    //     </div>`;
-    //     document.body.appendChild(tarjetaActivos);
-    // }
     $("#mostrarTipoInversor").prepend(`<h6 class="operacionOpcion2">Listado de posibles inversiones</h6>`);
     for (const inversiones of nacional.activo) {
         $("#card").append(`<div class= "activo__dolarBlue">
@@ -308,19 +316,19 @@ function definirInversor(f) {
     let SumaQuizz = porcentajeDeAhorro + reduccionDeActivo + gananciaEsperada + nuevoActivo;
     console.log(SumaQuizz);
 
-    const ordenarNivelRiesgo = () => {
-        nacional.activo.sort((a, b) => {
-            if (a.nivelRiesgo < b.nivelRiesgo) {
-                return -1;
-            }
-            if (a.nivelRiesgo > b.nivelRiesgo) {
-                return 1;
-            }
-            return 0;
-        });
-        console.log(nacional.activo);
-    }
-    ordenarNivelRiesgo();
+    // const ordenarNivelRiesgo = () => {
+    //     nacional.activo.sort((a, b) => {
+    //         if (a.nivelRiesgo < b.nivelRiesgo) {
+    //             return -1;
+    //         }
+    //         if (a.nivelRiesgo > b.nivelRiesgo) {
+    //             return 1;
+    //         }
+    //         return 0;
+    //     });
+    //     console.log(nacional.activo);
+    // }
+    // ordenarNivelRiesgo();
 
     $(document).ready(function() {
         $("#submitButtonQuizz").click(function(event) {
@@ -448,4 +456,20 @@ window.onscroll = function() {
         buttonUp.style.transform = "scale(0)";
     }
 
+}
+
+let PesosADolar = parseInt(prompt("ingreses cuantos pesos va gastar en dolares"));
+let pepe = PesosADolar / 165;
+let pipo = PesosADolar - (165 * 200);
+let blue = pipo / 183;
+let dolaresTotal = pepe + blue;
+let dolarBolsa = PesosADolar / 170;
+if (pepe <= 200) {
+    console.log("usted tiene q comprar dólar oficial")
+} else {
+    if (dolarTotal > dolarBolsa) {
+        console.log("compré dólar oficial y blue")
+    } else if (dolaresTotal < dolarBolsa) {
+        console.log("compré dólar bolsa")
+    } else console.log("Es lo mismo")
 }

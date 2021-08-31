@@ -73,8 +73,6 @@
     word-spacing: 0.25em;
   }
   .menu__items--font {
-    padding-bottom: 5px;
-    padding-top: 5px;
     background-color: #548aff;
     font-weight: bold;
     font-family: sans-serif;
@@ -89,33 +87,42 @@
     position: sticky;
     margin-bottom: 0px;
   }
+  .menu__items--font:hover {
+    color: #053191;
+  }
   ul.menu__items--font li {
-    color: black;
     position: relative;
-    margin-left: 5px;
+    margin-left: 3px;
     margin-bottom: 0px;
     font-size: 20px;
-    border: solid;
+    -webkit-transform: skew(-20deg, 0deg);
+            transform: skew(-20deg, 0deg);
+    border-right: solid;
+    border-left: solid;
     border-color: black;
-    padding: 2px;
-    border-radius: 5px;
+    line-height: 30px;
+    padding: 3px;
     background-color: greenyellow;
   }
+  ul.menu__items--font li a {
+    color: #548aff;
+    text-decoration: none;
+  }
+  ul.menu__items--font li a:hover {
+    color: #053191;
+  }
   ul.menu__items--font li:hover {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    background-color: #74b11a;
+    color: #053191;
   }
   li {
     position: relative;
     display: inline-block;
   }
   li li.item {
-    margin-bottom: 10px;
-  }
-  a {
-    /* esta etiqueta corresponde a los link dentro del menu*/
-    text-decoration: none;
-    color: black;
+    border-bottom: solid;
+    border-top: solid;
+    border-color: black;
   }
   .pagina__index {
     /* esta clase corresponde al index */
@@ -180,10 +187,37 @@
     position: absolute;
     top: 20%;
     margin-left: 30%;
+    background-color: black;
+    color: greenyellow;
+  }
+  #formIdBis label {
+    margin-bottom: 10px;
+    background-color: black;
+  }
+  #formIdBis .subtitulo {
+    background-color: black;
+    padding-right: 10px;
+    padding-left: 5px;
+    margin-left: 15px;
+  }
+  #formIdBis li {
+    background-color: black;
   }
   #formId {
     position: absolute;
     top: 10%;
+    background-color: black;
+    color: greenyellow;
+  }
+  #formId label {
+    margin-bottom: 10px;
+    background-color: black;
+  }
+  #formId .subtitulo {
+    background-color: black;
+  }
+  #formId li {
+    background-color: black;
   }
   .card {
     margin-left: 10px;
@@ -482,6 +516,12 @@
     padding: 5px;
     font-weight: bold;
     text-align: center;
+    background-color: greenyellow;
+    color: #548aff;
+  }
+  #submitButton:hover {
+    background-color: #74b11a;
+    color: #053191;
   }
   #submitButtonQuizz {
     margin-left: 20px;
@@ -489,6 +529,12 @@
     border-radius: 5px;
     padding: 5px;
     font-weight: bold;
+    background-color: greenyellow;
+    color: #548aff;
+  }
+  #submitButtonQuizz:hover {
+    background-color: #74b11a;
+    color: #053191;
   }
   .opciones {
     font-weight: bold;
@@ -542,8 +588,11 @@
     line-height: 35px;
   }
   .contenedor:hover {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
+    background-color: #74b11a;
+    color: #053191;
+  }
+  .contenedor a {
+    text-decoration: none;
   }
   .contenedor__botones {
     border-bottom: solid;
@@ -590,7 +639,7 @@
     right: 5px;
     top: 5px;
   }
-  #foto__cerrar {
+  .foto__cerrar {
     width: 30px;
     height: 30px;
   }
