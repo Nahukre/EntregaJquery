@@ -40,7 +40,8 @@ function crearUsuario(e) {
     let usuario = new persona(nombreIngresado, emailIngresado, sueldoIngresado, ahorroIngresado, extraIngresado, objetivoIngresado, valorBienIngresado);
 
     arrayUsuarios.push(usuario);
-    // localStorage.setItem(1, JSON.stringify(arrayUsuarios));
+
+    localStorage.setItem(1, JSON.stringify(arrayUsuarios));
 
 
     console.log(usuario)
@@ -68,6 +69,16 @@ function crearUsuario(e) {
         });
     });
 
+    function tiempo(){
+        let tiempoTotal = division(valorBienIngresado, (suma(extraIngresado, ahorroAnual)))
+        if(tiempoTotal < 1){
+            tiempoTotal = "Menos de un año"
+        }else{
+            tiempoTotal = `${tiempoTotal.toFixed()} años`
+        }
+        return tiempoTotal
+    }
+    
 
     let cuantoTardo = document.getElementById("cuantoTardo");
 
@@ -81,7 +92,7 @@ function crearUsuario(e) {
             <h5>\nValor del Bien: $${usuario.valorBien}<h5>
             <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
             <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempo()} años para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro1);
             break;
         case ((ahorroPorcentaje > 5) && (ahorroPorcentaje <= 10)):
@@ -208,9 +219,10 @@ function crearUsuario(e) {
     $("#mostrarCuantoTardo").css("display", "block");
     $(".sidebar").css("display", "block");
     $("#mostarTipoInversor").css("display", "inline-block");
+    $("#myForm")[0].reset();
 };
-
-// console.log(localStorage.getItem(1));
+localStorage.setItem(1, JSON.stringify(arrayUsuarios));
+console.log(localStorage.getItem(1));
 
 
 
@@ -322,6 +334,9 @@ function definirInversor(f) {
 
     switch (true) {
         case (SumaQuizz <= 4 || SumaQuizz <= 6):
+            let inversorConservadorJson = { "tipoDeInversor": "conservador" };
+            localStorage.setItem("tipoDeInversor", JSON.stringify(inversorConservadorJson));
+            console.log(localStorage.getItem("tipoDeInversor"));
             let contenedorTipoInversorConservador = document.createElement("div");
             contenedorTipoInversorConservador.innerHTML =
                 `<h5 class="operacionOpcion">Usted es un inversor conservador</h>`;
@@ -339,6 +354,9 @@ function definirInversor(f) {
             break;
 
         case (SumaQuizz <= 7 || SumaQuizz <= 9):
+            let inversorModeradoJson = { "tipoDeInversor": "moderado" };
+            localStorage.setItem("tipoDeInversor", JSON.stringify(inversorModeradoJson));
+            console.log(localStorage.getItem("tipoDeInversor"));
             let contenedorTipoInversorModerado = document.createElement("div");
             contenedorTipoInversorModerado.innerHTML =
                 `<h5 class="operacionOpcion">Usted es un inversor Moderado</h>`;
@@ -356,6 +374,9 @@ function definirInversor(f) {
             break;
 
         case (SumaQuizz >= 10 || SumaQuizz <= 12):
+            let inversorAgresivoJson = { "tipoDeInversor": "agresivo" };
+            localStorage.setItem("tipoDeInversor", JSON.stringify(inversorAgresivoJson));
+            console.log(localStorage.getItem("tipoDeInversor"));
             let contenedorTipoInversorAgresivo = document.createElement("div");
             contenedorTipoInversorAgresivo.innerHTML =
                 `<h5 class="operacionOpcion">Usted es un inversor agresivo</h>`;
@@ -372,12 +393,15 @@ function definirInversor(f) {
             $(".nivelRiesgo2").css("display", "none");
             break;
     }
+    localStorage.setItem(1, JSON.stringify(arrayUsuarios));
+
     document.getElementById("formId").style.display = "none";
     $(".resultadoTipoInversor").css("display", "block");
     $(".operacionOpcion3").css("display", "block");
     $("#mostrarCuantoTardo").css("display", "block");
     $(".sidebar").css("display", "block");
     $("#mostarTipoInversor").css("display", "inline-block");
+    $("#formulario2")[0].reset();
 }
 definirInversor();
 
