@@ -72,8 +72,6 @@ $color-celeste: #548aff;
         word-spacing: 0.25em;
     }
     .menu__items--font {
-        padding-bottom: 5px;
-        padding-top: 5px;
         background-color: $color-celeste;
         font-weight: bold;
         font-family: sans-serif;
@@ -86,34 +84,44 @@ $color-celeste: #548aff;
         border-color: black;
         position: sticky;
         margin-bottom: 0px;
+        &:hover {
+            color: #053191;
+        }
     }
     ul.menu__items--font li {
-        color: black;
         position: relative;
-        margin-left: 5px;
+        margin-left: 3px;
         margin-bottom: 0px;
         font-size: 20px;
-        border: solid;
+        transform: skew(-20deg, 0deg);
+        border-right: solid;
+        border-left: solid;
         border-color: black;
-        padding: 2px;
-        border-radius: 5px;
+        line-height: 30px;
+        padding: 3px;
         background-color: $color-verde;
+        a {
+            color: $color-celeste;
+            text-decoration: none;
+            &:hover {
+                color: #053191;
+            }
+        }
         &:hover {
-            transform: scale(1.1);
+            background-color: rgb(116, 177, 26);
+            color: #053191;
         }
     }
     li {
         position: relative;
         display: inline-block;
         li.item {
-            margin-bottom: 10px;
+            border-bottom: solid;
+            border-top: solid;
+            border-color: black;
         }
     }
-    a {
-        /* esta etiqueta corresponde a los link dentro del menu*/
-        text-decoration: none;
-        color: black;
-    }
+    
     .pagina__index {
         /* esta clase corresponde al index */
         background-image: url(../img/inversion.jpg);
@@ -177,10 +185,37 @@ $color-celeste: #548aff;
         position: absolute;
         top: 20%;
         margin-left: 30%;
+        background-color: black;
+        color: $color-verde;
+        label {
+            margin-bottom: 10px;
+            background-color: black;
+        }
+        .subtitulo {
+            background-color: black;
+            padding-right: 10px;
+            padding-left: 5px;
+            margin-left: 15px;
+        }
+        li{
+            background-color: black;
+        }
     }
     #formId {
         position: absolute;
         top: 10%;
+        background-color: black;
+        color: $color-verde;
+        label {
+            margin-bottom: 10px;
+            background-color: black;
+        }
+        .subtitulo {
+            background-color: black;
+        }
+        li{
+            background-color: black;
+        }
     }
     .card {
         margin-left: 10px;
@@ -459,9 +494,6 @@ $color-celeste: #548aff;
         padding-bottom: 10px;
         order: 1000;
     }
-    // h2 {
-    //     margin-left: 20px;
-    // }
     #submitButton {
         margin-left: 40%;
         margin-bottom: 20px;
@@ -469,6 +501,12 @@ $color-celeste: #548aff;
         padding: 5px;
         font-weight: bold;
         text-align: center;
+        background-color: $color-verde;
+        color: $color-celeste;
+        &:hover {
+            background-color: rgb(116, 177, 26);
+            color: #053191;
+        }
     }
     #submitButtonQuizz {
         margin-left: 20px;
@@ -476,6 +514,12 @@ $color-celeste: #548aff;
         border-radius: 5px;
         padding: 5px;
         font-weight: bold;
+        background-color: $color-verde;
+        color: $color-celeste;
+        &:hover {
+            background-color: rgb(116, 177, 26);
+            color: #053191;
+        }
     }
     .opciones {
         font-weight: bold;
@@ -483,7 +527,7 @@ $color-celeste: #548aff;
     .contenedor__titulo {
         text-align: center;
         background-color: rgba(255, 255, 255, 0.8);
-        ;
+        
     }
     .contenedor__titulo2 {
         text-align: center;
@@ -527,7 +571,12 @@ $color-celeste: #548aff;
         margin-right: 60px;
         line-height: 35px;
         &:hover {
-            transform: scale(1.3);
+            background-color: rgb(116, 177, 26);
+            color: #053191;
+            
+        }
+        a {
+            text-decoration: none;
         }
     }
     .contenedor__botones {
@@ -574,7 +623,7 @@ $color-celeste: #548aff;
         right: 5px;
         top: 5px;
     }
-    #foto__cerrar {
+    .foto__cerrar {
         width: 30px;
         height: 30px;
     }
