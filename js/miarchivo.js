@@ -431,45 +431,45 @@ function cerrarFormulario() {
 
 /// Scroll up ///
 
-document.getElementById("button-up").addEventListener("click", scrollUp);
+// document.getElementById("button-up").addEventListener("click", scrollUp);
 
-function scrollUp() {
+// function scrollUp() {
 
-    var currentScroll = document.documentElement.scrollTop;
+//     var currentScroll = document.documentElement.scrollTop;
 
-    if (currentScroll > 0) {
-        window.requestAnimationFrame(scrollUp);
-        window.scrollTo(0, currentScroll - (currentScroll / 10));
-        buttonUp.style.transform = "scale(0)";
-    }
-}
+//     if (currentScroll > 0) {
+//         window.requestAnimationFrame(scrollUp);
+//         window.scrollTo(0, currentScroll - (currentScroll / 10));
+//         buttonUp.style.transform = "scale(0)";
+//     }
+// }
 
-buttonUp = document.getElementById("button-up");
+// buttonUp = document.getElementById("button-up");
 
-window.onscroll = function() {
+// window.onscroll = function() {
 
-    var scroll = document.documentElement.scrollTop;
+//     var scroll = document.documentElement.scrollTop;
 
-    if (scroll > 100) {
-        buttonUp.style.transform = "scale(1)";
-    } else if (scroll < 100) {
-        buttonUp.style.transform = "scale(0)";
-    }
+//     if (scroll > 100) {
+//         buttonUp.style.transform = "scale(1)";
+//     } else if (scroll < 100) {
+//         buttonUp.style.transform = "scale(0)";
+//     }
 
-}
+// }
 
-let PesosADolar = parseInt(prompt("ingreses cuantos pesos va gastar en dolares"));
-let pepe = PesosADolar / 165;
-let pipo = PesosADolar - (165 * 200);
-let blue = pipo / 183;
-let dolaresTotal = pepe + blue;
-let dolarBolsa = PesosADolar / 170;
-if (pepe <= 200) {
-    console.log("usted tiene q comprar dólar oficial")
-} else {
-    if (dolarTotal > dolarBolsa) {
-        console.log("compré dólar oficial y blue")
-    } else if (dolaresTotal < dolarBolsa) {
-        console.log("compré dólar bolsa")
-    } else console.log("Es lo mismo")
-}
+// let PesosADolar = parseInt(prompt("ingreses cuantos pesos va gastar en dolares"));
+// let pepe = PesosADolar / 165;
+// let pipo = PesosADolar - (165 * 200);
+// let blue = pipo / 183;
+// let dolaresTotal = pepe + blue;
+// let dolarBolsa = PesosADolar / 170;
+// if (pepe <= 200) {
+//     console.log("usted tiene q comprar dólar oficial")
+// } else {
+//     if (dolarTotal > dolarBolsa) {
+//         console.log("compré dólar oficial y blue")
+//     } else if (dolaresTotal < dolarBolsa) {
+//         console.log("compré dólar bolsa")
+//     } else console.log("Es lo mismo")
+// }
