@@ -69,14 +69,51 @@ function crearUsuario(e) {
         });
     });
 
-    // let redondeo = 1;
-    // if (sueldoAños < redondeo) {
-    //     let sueldoAñosRedondeo =  "menos de un año";
-    // }
-    // else if (sueldoAños > redondeo) {
-    //     let sueldoAñosRedondeo = redondeo + sueldoAños;
-    // }
-    
+    function tiempo(){
+        let tiempoTotal = division(valorBienIngresado, (suma(extraIngresado, ahorroAnual)))
+        if(tiempoTotal < 1){
+            tiempoTotal = "Menos de un año"
+        }else{
+            tiempoTotal = `${tiempoTotal.toFixed()} años`
+        }
+        return tiempoTotal
+    }
+    function AhorroAños(){
+        let ahorroAños = division(ahorroReal, 12)
+        if(ahorroAños < 1){
+            ahorroAños = "Menos de un año"
+        }else{
+            ahorroAños = `${ahorroAños.toFixed()} años`
+        }
+        return ahorroAños
+    }
+    function SueldoAños(){
+        let sueldoAños = division(mesesDeAhorro, 12)
+        if(sueldoAños < 1){
+            sueldoAños = "Menos de un año"
+        }else{
+            sueldoAños = `${sueldoAños.toFixed()} años`
+        }
+        return sueldoAños
+    }
+    function AhorroReal(){
+        let ahorroReal = division(valorBienIngresado, ahorroIngresado)
+        if(ahorroReal < 1){
+            ahorroReal = "Menos de un año"
+        }else{
+            ahorroReal = `${ahorroReal.toFixed()} años`
+        }
+        return ahorroReal
+    }
+    function MesesDeAhorro(){
+        let mesesDeAhorro = division(valorBienIngresado, sueldoIngresado);
+        if(mesesDeAhorro < 1){
+            mesesDeAhorro = "Menos de un año"
+        }else{
+            mesesDeAhorro = `${mesesDeAhorro.toFixed()} años`
+        }mesesDeAhorro
+    }
+
 
     let cuantoTardo = document.getElementById("cuantoTardo");
 
@@ -88,9 +125,9 @@ function crearUsuario(e) {
             <h5>\nSu porcentaje de ahorro mensual es del ${ahorroPorcentaje.toFixed(2)}%</h5> 
             <h5>\nSu ahorro anual es de $${ahorroAnual}</h5> 
             <h5>\nValor del Bien: $${usuario.valorBien}<h5>
-            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${mesesDeAhorro.toFixed(2)} meses o ${sueldoAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${ahorroReal.toFixed(2)} meses o ${ahorroAños.toFixed(2)} años para comprar lo que desea</h5> 
-            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempoTotal.toFixed(2)} años para comprar lo que desea</h5>`;
+            <h5>\nSi destinara todo su sueldo a comprar su ${usuario.objetivo} tardaría ${MesesDeAhorro()} meses o ${SueldoAños()} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara solo su ahorro mensual a comprar su ${usuario.objetivo} tardaría ${AhorroReal()} meses o ${AhorroAños()} años para comprar lo que desea</h5> 
+            <h5>\nSi destinara su ahorro anual más sus ingresos extra anuales a comprar su ${usuario.objetivo} tardaría ${tiempo()} años para comprar lo que desea</h5>`;
             cuantoTardo.appendChild(contenedorPorcentajeAhorro1);
             break;
         case ((ahorroPorcentaje > 5) && (ahorroPorcentaje <= 10)):
